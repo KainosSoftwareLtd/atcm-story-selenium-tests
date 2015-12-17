@@ -3,5 +3,8 @@ Selenium tests for ATCM story
 
 To run it
 ```
-mvn install
+mvn clean install
 ```
+
+
+
