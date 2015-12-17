@@ -9,11 +9,17 @@ import java.util.List;
 public class ShopProducts extends BasePage{
 
  
-    private static final By BUTTON = By.xpath("//button");
-    private static final By CART = By.className("navbar-right");
+    private static final By BUTTON = By.id("add-item-to-cart");
+    private static final By CART = By.id("shopping-cart-summary");
+    private static final By INFO_TEXT = By.className("jumbotron");
 
     public ShopProducts(WebDriver driver) {
         super(driver);
+    }
+    
+    public ShopProducts clickOnFirstProduct(){
+        clickOnElement(BUTTON);
+        return this;
     }
     
     public void clickAddToACartForItem(int n){
@@ -32,5 +38,9 @@ public class ShopProducts extends BasePage{
     
     public void openCart(){
         clickOnElement(CART);
+    }
+
+    public String getInformationText() {
+       return getText(INFO_TEXT);
     }
 }
